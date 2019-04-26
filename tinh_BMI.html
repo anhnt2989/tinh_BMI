@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số BMI của cơ thể</title>
+</head>
+<body>
+    Weight (kg) :
+    <input id="weight" style="background-color: orange" type="text">
+    <br><br>
+    Height (m) :
+    <input id="height" style="background-color: orange" type="text">
+    <br><br>
+    <input type="button" style="background-color:wheat" value="Calculate now!" onclick="tinh()">
+    <script>
+        function tinh() {
+            let kq1 = 0;
+            let we = parseFloat(document.getElementById("weight").value);
+            let he = parseFloat(document.getElementById("height").value);
+            let bmi = parseFloat(we / he ** 2);
+            if (bmi < 18) {
+                kq1 = ("Underweight" + " (Thiếu cân)");
+                document.getElementById('kq').innerHTML = kq1;
+            } else if (bmi < 25.0) {
+                kq1 = ("Normal" + " (Bình thường)");
+                document.getElementById('kq').innerHTML = kq1;
+            } else if (bmi < 30) {
+                kq1 = ("Overweight" + " (Thừa cân)");
+                document.getElementById('kq').innerHTML = kq1;
+            } else {
+                kq1 = ("Obese" + " (Mập vl)");
+                document.getElementById('kq').innerHTML = kq1;
+            }
+        }
+    </script>
+    <br><br>
+    <p id="kq"></p>
+</body>
+</html>
